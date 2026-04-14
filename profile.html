@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Your Profile</h1>
+            <p>Manage your account, bio, and your activity.</p>
+        </section>
+
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profile-avatar"></div>
+                    <div class="profile-meta">
+                        <h2 id="profile-name">-</h2>
+                        <div class="profile-sub" id="profile-email">-</div>
+                        <div class="profile-sub" id="profile-created">-</div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn sell" id="logout-btn" type="button">Logout</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profile-display">Display Name</label>
+                    <input type="text" id="profile-display" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="profile-pic">Profile Picture</label>
+                    <input type="file" id="profile-pic" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="profile-bio">Bio</label>
+                    <textarea id="profile-bio" rows="4" placeholder="Tell others about your trading interests..."></textarea>
+                </div>
+                <div class="param-grid">
+                    <div class="form-group">
+                        <label for="profile-website">Website</label>
+                        <input type="url" id="profile-website" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-twitter">Twitter</label>
+                        <input type="url" id="profile-twitter" placeholder="https://x.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-linkedin">LinkedIn</label>
+                        <input type="url" id="profile-linkedin" placeholder="https://linkedin.com/in/...">
+                    </div>
+                </div>
+                <button class="btn buy" id="save-profile-btn" type="button">Save Profile</button>
+                <div class="auth-message" id="profile-message"></div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <div class="stat-label">Saved Presets</div>
+                    <div class="stat-value" id="stat-presets">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Wishlist Items</div>
+                    <div class="stat-value" id="stat-wishlist">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Ideas Posted</div>
+                    <div class="stat-value" id="stat-ideas">0</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

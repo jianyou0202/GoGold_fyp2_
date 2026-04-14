@@ -1,0 +1,23 @@
+{
+  "name": "gogold-trading",
+  "version": "1.0.0",
+  "description": "GoGold Trading Platform - GC=F Strategy Tester and Assistant",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "trading",
+    "gold",
+    "futures",
+    "backtest",
+    "strategy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}

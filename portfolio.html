@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Portfolio Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Your Portfolio Overview</h1>
+            <p>Track your Gold Futures (GC=F) investments and analyze your overall performance.</p>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="portfolio-grid">
+                <div class="portfolio-card total-value">
+                    <h3>Total Portfolio Value</h3>
+                    <p class="value" id="portfolio-total">$0.00</p>
+                    <span class="trend up" id="portfolio-today">+0.0% (Today)</span>
+                </div>
+                <div class="portfolio-card holdings">
+                    <h3>Current GC=F Holdings</h3>
+                    <p class="value" id="portfolio-holdings">0.0 oz</p>
+                    <span class="detail" id="portfolio-avg">Avg. Purchase Price: $0.00</span>
+                </div>
+                <div class="portfolio-card cash-balance">
+                    <h3>Available Cash</h3>
+                    <p class="value" id="portfolio-cash">$0.00</p>
+                    <span class="detail">Available for Buying</span>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2>Cash Management</h2>
+                <div class="param-grid">
+                    <div class="form-group">
+                        <label for="cash-amount">Amount</label>
+                        <input type="number" id="cash-amount" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button class="btn buy" id="deposit-btn" type="button">Deposit</button>
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button class="btn sell" id="withdraw-btn" type="button">Withdraw</button>
+                    </div>
+                </div>
+                <div class="idea-actions" style="margin-top: 1rem;">
+                    <button class="mini-btn" id="portfolio-export-json-btn" type="button">Export Portfolio JSON</button>
+                    <button class="mini-btn primary" id="portfolio-import-json-btn" type="button">Import Portfolio JSON</button>
+                    <button class="mini-btn danger" id="portfolio-reset-btn" type="button">Reset Portfolio</button>
+                    <input id="portfolio-import-file" type="file" accept="application/json" style="display:none;">
+                </div>
+                <div class="auth-message" id="portfolio-message"></div>
+            </div>
+
+            <div class="performance-history">
+                <h2>Performance Over Time</h2>
+                <div class="helper-text" id="portfolio-performance-msg">Loading performance…</div>
+                <div id="portfolio-performance-chart" class="chart-container"></div>
+            </div>
+
+            <div class="recent-trades">
+                <h2>Recent Portfolio Transactions</h2>
+                <div class="transaction-list" id="portfolio-transactions"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="portfolio-reset-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-portfolio-reset-modal" class="close-btn">&times;</span>
+            <h2>Reset Portfolio</h2>
+            <p class="helper-text">This will clear your portfolio holdings and transaction history in this browser.</p>
+            <div class="idea-actions" style="margin-top: 1rem;">
+                <button class="mini-btn danger" id="confirm-portfolio-reset-btn" type="button">Yes, Reset</button>
+                <button class="mini-btn" id="cancel-portfolio-reset-btn" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+</body>
+</html>

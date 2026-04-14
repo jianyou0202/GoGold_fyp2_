@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Login</h1>
+            <p>Sign in to save strategies, join discussions, and manage your wishlist.</p>
+        </section>
+
+        <section class="auth-section">
+            <div class="auth-card">
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div class="auth-actions">
+                        <button class="btn buy" type="submit">Login</button>
+                        <a class="link-btn" href="register.html">Create account</a>
+                    </div>
+                    <div class="auth-message" id="login-message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

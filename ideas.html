@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Ideas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html" class="active">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Idea Sharing</h1>
+            <p>Share GC=F strategy ideas, discuss with others, and learn from the community.</p>
+        </section>
+
+        <section class="ideas-section">
+            <div class="results-card">
+                <h2>Post an Idea</h2>
+                <form id="idea-form" class="idea-form">
+                    <div class="form-group">
+                        <label for="idea-title">Title</label>
+                        <input type="text" id="idea-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idea-body">Details</label>
+                        <textarea id="idea-body" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="idea-image">Picture (optional)</label>
+                        <input type="file" id="idea-image" accept="image/*">
+                    </div>
+                    <button class="btn buy" type="submit">Publish</button>
+                    <div class="auth-message" id="idea-message"></div>
+                </form>
+            </div>
+
+            <div class="results-card">
+                <h2>Find Investors</h2>
+                <div class="param-grid">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="investor-search">Search by name or email</label>
+                        <input type="text" id="investor-search" placeholder="Type to search...">
+                    </div>
+                </div>
+                <div class="ideas-grid" id="investor-results"></div>
+                <h2 style="margin-top: 1.5rem;">Following</h2>
+                <div class="ideas-grid" id="following-list"></div>
+            </div>
+
+            <div class="results-card">
+                <h2>Latest Ideas</h2>
+                <div class="ideas-grid" id="ideas-grid"></div>
+            </div>
+        </section>
+
+        <div id="idea-modal" class="modal hidden">
+            <div class="modal-content">
+                <span id="close-idea-modal" class="close-btn">&times;</span>
+                <div id="idea-modal-body"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

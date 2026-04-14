@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGold - Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html" class="active">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>GoGold Tutorial</h1>
+            <p>Step-by-step guide to use every page: chart tools, backtesting, portfolio simulation, market news, and community.</p>
+        </section>
+
+        <section class="results-card">
+            <h2>Quick Navigation</h2>
+            <div class="param-grid">
+                <a class="link-btn" href="#start">Getting Started</a>
+                <a class="link-btn" href="#home">Home</a>
+                <a class="link-btn" href="#backtest">Strategy Tester</a>
+                <a class="link-btn" href="#market">Market Insights</a>
+                <a class="link-btn" href="#portfolio">Portfolio</a>
+                <a class="link-btn" href="#community">Community</a>
+                <a class="link-btn" href="#troubleshoot">Troubleshooting</a>
+            </div>
+        </section>
+
+        <section class="results-card" id="start">
+            <h2>Getting Started</h2>
+            <div class="helper-text">Most features work without login. Login is needed for posting ideas, following, and wishlist.</div>
+            <details class="tutorial-block" open>
+                <summary>1) Navigation (Desktop / Phone)</summary>
+                <div class="tutorial-content">
+                    <div class="result-item">
+                        <span class="label">Desktop</span>
+                        <span class="value">Use the top navigation bar to switch pages.</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Phone</span>
+                        <span class="value">Tap Menu to open or close the navigation list.</span>
+                    </div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Register / Login</summary>
+                <div class="tutorial-content">
+                    <div class="result-item">
+                        <span class="label">Register</span>
+                        <span class="value">Create an account (stored in your browser storage).</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Login</span>
+                        <span class="value">Login to post ideas, comment, follow investors, and save wishlist strategies.</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Logout</span>
+                        <span class="value">Use the Logout link in the navigation area.</span>
+                    </div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>3) Dark / Light Mode</summary>
+                <div class="tutorial-content">
+                    <div class="result-item">
+                        <span class="label">Toggle</span>
+                        <span class="value">Use the Dark/Light button in the navigation. Your selection is remembered.</span>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="home">
+            <h2>Home</h2>
+            <div class="helper-text">The Home page is a dashboard: chart tools + basic trading simulator + previews of other pages.</div>
+            <details class="tutorial-block" open>
+                <summary>1) Live Price</summary>
+                <div class="tutorial-content">
+                    <div class="result-item">
+                        <span class="label">What it shows</span>
+                        <span class="value">Current price and change for the selected symbol (default GC=F).</span>
+                    </div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Chart Timeframes</summary>
+                <div class="tutorial-content">
+                    <div class="result-item">
+                        <span class="label">Intraday</span>
+                        <span class="value">1m / 5m / 15m / 1H / 4H</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Higher timeframes</span>
+                        <span class="value">1D / 1W / 1M</span>
+                    </div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>3) Overlays and Tools</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Volume</span><span class="value">Off by default. Toggle it on when needed.</span></div>
+                    <div class="result-item"><span class="label">SMA 20 / EMA 50</span><span class="value">Trend overlays to help confirm direction.</span></div>
+                    <div class="result-item"><span class="label">Reset</span><span class="value">Resets chart zoom/pan.</span></div>
+                    <div class="result-item"><span class="label">Fullscreen</span><span class="value">Expands the chart for analysis.</span></div>
+                    <div class="result-item"><span class="label">PNG</span><span class="value">Exports the chart screenshot.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>4) Drawing</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Draw Line</span><span class="value">Click once to set start, move mouse to preview, click again to place.</span></div>
+                    <div class="result-item"><span class="label">Shift Snap</span><span class="value">Hold Shift after the first click to snap the line to horizontal/vertical direction.</span></div>
+                    <div class="result-item"><span class="label">H Line</span><span class="value">One click places a horizontal price line at the clicked level.</span></div>
+                    <div class="result-item"><span class="label">V Line</span><span class="value">One click places a vertical time line at the clicked candle/time.</span></div>
+                    <div class="result-item"><span class="label">Clear</span><span class="value">Removes all drawn lines.</span></div>
+                    <div class="result-item"><span class="label">Exit</span><span class="value">Press Esc to stop drawing mode.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>5) Price Alerts</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Set alert</span><span class="value">Enter a price and click Set to arm the alert.</span></div>
+                    <div class="result-item"><span class="label">Clear alert</span><span class="value">Click Clear to remove the alert.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>6) Buy / Sell (Simulator)</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Purpose</span><span class="value">A simulated account that updates your Portfolio page.</span></div>
+                    <div class="result-item"><span class="label">How it works</span><span class="value">Enter oz amount and click Buy or Sell. Transactions are recorded locally.</span></div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="backtest">
+            <h2>Strategy Tester</h2>
+            <div class="helper-text">Build strategies with indicators and parameters, then evaluate performance, drawdown, and robustness.</div>
+            <details class="tutorial-block" open>
+                <summary>1) Select Indicators (Confluence)</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Multiple indicators</span><span class="value">You can select many indicators at once.</span></div>
+                    <div class="result-item"><span class="label">Confluence rule</span><span class="value">Trades happen only when ALL selected indicators agree on BUY or SELL.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Parameters + Tooltips</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Dynamic params</span><span class="value">Parameter inputs appear based on selected indicators.</span></div>
+                    <div class="result-item"><span class="label">Definitions</span><span class="value">Hover indicator names and result labels to see definitions.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>3) Risk & Costs</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Commission + slippage</span><span class="value">Makes results realistic by deducting costs.</span></div>
+                    <div class="result-item"><span class="label">SL/TP</span><span class="value">Stops and targets are evaluated using candle high/low.</span></div>
+                    <div class="result-item"><span class="label">Net Profit</span><span class="value">Final equity minus starting equity after ALL costs.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>4) Run Backtest + Outputs</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Backtest Results</span><span class="value">Metrics like Sharpe, drawdown, win rate, and net profit.</span></div>
+                    <div class="result-item"><span class="label">Equity & Drawdown</span><span class="value">Charts to visualize growth and risk.</span></div>
+                    <div class="result-item"><span class="label">Trade log</span><span class="value">Entry/exit rows and the BUY/EXIT markers shown on the backtest chart.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>5) Walk-Forward Testing</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Why</span><span class="value">Checks whether performance holds across multiple time segments.</span></div>
+                    <div class="result-item"><span class="label">How</span><span class="value">Enable Walk-Forward, choose folds/start/test percentages, then run backtest.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>6) Robustness & Stress</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Robustness score</span><span class="value">Combines risk/return and stability measures to flag fragile strategies.</span></div>
+                    <div class="result-item"><span class="label">Monte Carlo</span><span class="value">Resamples trade outcomes to estimate risk of bad sequences.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>7) Presets + Wishlist + Demo</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Save Preset</span><span class="value">Store your strategy settings for later.</span></div>
+                    <div class="result-item"><span class="label">Add to Wishlist</span><span class="value">Bookmark strategies to revisit.</span></div>
+                    <div class="result-item"><span class="label">Demo Run</span><span class="value">One-click example strategy for quick demonstrations.</span></div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="market">
+            <h2>Market Insights</h2>
+            <div class="helper-text">Live gold-related headlines with in-site detail view.</div>
+            <details class="tutorial-block" open>
+                <summary>1) Live Headlines</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Refresh</span><span class="value">The list refreshes automatically.</span></div>
+                    <div class="result-item"><span class="label">Fallback</span><span class="value">If live fetch fails, cached headlines may be shown.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Read Details</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">In-site modal</span><span class="value">Click a headline to see a preview inside the website.</span></div>
+                    <div class="result-item"><span class="label">Open source</span><span class="value">Use the source button to read the full article externally.</span></div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="helper-text">A simulated trading ledger with deposits/withdrawals, holdings valuation, and equity curve.</div>
+            <details class="tutorial-block" open>
+                <summary>1) Balances</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Cash</span><span class="value">Available balance for buying.</span></div>
+                    <div class="result-item"><span class="label">Holdings</span><span class="value">Total oz held from Buy/Sell actions.</span></div>
+                    <div class="result-item"><span class="label">Total</span><span class="value">Cash + holdings × latest price.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Deposit / Withdraw</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Deposit</span><span class="value">Adds cash to your portfolio.</span></div>
+                    <div class="result-item"><span class="label">Withdraw</span><span class="value">Removes cash (cannot go below zero).</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>3) Performance Over Time</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Equity curve</span><span class="value">Calculated from your transactions and GC=F daily price history.</span></div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="community">
+            <h2>Community: Ideas, Wishlist, Profile</h2>
+            <details class="tutorial-block" open>
+                <summary>1) Ideas (Posting + Images)</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Post idea</span><span class="value">Login required. Add title, body, and optional image.</span></div>
+                    <div class="result-item"><span class="label">Interact</span><span class="value">Like and comment on ideas.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) Find Investors + Following</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Search</span><span class="value">Find users by display name or email.</span></div>
+                    <div class="result-item"><span class="label">Follow</span><span class="value">Follow/unfollow investors and see your following list.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>3) Wishlist</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Save strategies</span><span class="value">Add from Strategy Tester to revisit later.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>4) Profile</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Profile photo</span><span class="value">Upload an image to use as your avatar.</span></div>
+                    <div class="result-item"><span class="label">Social links</span><span class="value">Add website and social accounts.</span></div>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-card" id="troubleshoot">
+            <h2>Troubleshooting</h2>
+            <details class="tutorial-block" open>
+                <summary>1) Chart or live data not loading</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Cause</span><span class="value">Some sources may be blocked on certain networks/browsers.</span></div>
+                    <div class="result-item"><span class="label">Fix</span><span class="value">Refresh the page, switch timeframe, or try again later.</span></div>
+                </div>
+            </details>
+            <details class="tutorial-block">
+                <summary>2) My saved data disappeared</summary>
+                <div class="tutorial-content">
+                    <div class="result-item"><span class="label">Cause</span><span class="value">Local storage cleared or using a different browser/device.</span></div>
+                    <div class="result-item"><span class="label">Fix</span><span class="value">Avoid clearing site data or use the same device/browser.</span></div>
+                </div>
+            </details>
+            <div class="idea-actions" style="margin-top: 1rem;">
+                <a class="link-btn" href="#start">Back to top</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GoGold. All rights reserved.</p>
+    </footer>
+</body>
+</html>

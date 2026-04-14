@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Your Friendly Gold Futures (GC=F) Trading Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Gold Futures (GC=F) Strategy Tester</h1>
+            <p>Beginner-friendly platform to test and optimize your GC=F trading strategies.</p>
+            <div class="price-display" id="live-price-card">
+                <span class="label" id="live-symbol-label">LIVE GC=F:</span>
+                <span class="price" id="current-price-val">4657.00</span>
+                <span class="trend up" id="current-price-change">+0.00%</span>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <div class="dashboard-grid">
+                <div class="dashboard-main">
+                    <section id="chart-section" class="chart-section">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h2 id="chart-title">Live Gold Futures (GC=F) Chart (Historical)</h2>
+                                <div class="timeframe-selector">
+                                    <select id="symbol-select" class="symbol-select">
+                                        <option value="GC=F" selected>GC=F</option>
+                                        <option value="SI=F">SI=F</option>
+                                        <option value="CL=F">CL=F</option>
+                                    </select>
+                                    <button class="tf-btn" data-tf="1m">1m</button>
+                                    <button class="tf-btn" data-tf="5m">5m</button>
+                                    <button class="tf-btn" data-tf="15m">15m</button>
+                                    <button class="tf-btn" data-tf="1H">1H</button>
+                                    <button class="tf-btn" data-tf="4H">4H</button>
+                                    <button class="tf-btn active" data-tf="1D">1D</button>
+                                    <button class="tf-btn" data-tf="1W">1W</button>
+                                    <button class="tf-btn" data-tf="1M">1M</button>
+                                    <span class="divider">|</span>
+                                    <button id="draw-line-btn" class="chart-tool-btn">Draw Line</button>
+                                    <button id="draw-hline-btn" class="chart-tool-btn">H Line</button>
+                                    <button id="draw-vline-btn" class="chart-tool-btn">V Line</button>
+                                    <button id="clear-drawings-btn" class="chart-tool-btn">Clear</button>
+                                    <span class="divider">|</span>
+                                    <button id="toggle-volume-btn" class="chart-tool-btn">Volume</button>
+                                    <button id="toggle-sma-btn" class="chart-tool-btn">SMA 20</button>
+                                    <button id="toggle-ema-btn" class="chart-tool-btn">EMA 50</button>
+                                    <button id="reset-zoom-btn" class="chart-tool-btn">Reset</button>
+                                    <button id="fullscreen-btn" class="chart-tool-btn">Fullscreen</button>
+                                    <button id="download-png-btn" class="chart-tool-btn">PNG</button>
+                                </div>
+                            </div>
+                            <div id="main-chart" class="chart-container">
+                                <div id="chart-legend" class="chart-legend"></div>
+                                <div id="chart-toast" class="chart-toast hidden"></div>
+                            </div>
+                            <div class="chart-alert-bar">
+                                <div class="alert-title">Price Alert</div>
+                                <input id="alert-price" class="alert-input" type="number" step="0.01" placeholder="Enter price">
+                                <button id="set-alert-btn" class="btn-mini">Set</button>
+                                <button id="clear-alert-btn" class="btn-mini secondary">Clear</button>
+                                <div class="alert-status" id="alert-status">No alert</div>
+                            </div>
+                            
+                            <div class="chart-news-footer">
+                                <div class="news-ticker-label">LATEST GC=F UPDATES:</div>
+                                <div class="ticker-wrapper">
+                                    <div class="news-ticker-content">
+                                        <div class="ticker-item" data-news-id="1">Gold Futures (GC=F) hit new 2026 high at $4,657...</div>
+                                        <div class="ticker-item" data-news-id="2">Institutional demand for GC=F increases by 15%...</div>
+                                        <div class="ticker-item" data-news-id="3">Analysts eye $4,800 as next major resistance...</div>
+                                        <div class="ticker-item" data-news-id="4">Federal Reserve interest rate signals boost Gold sentiment...</div>
+                                        <div class="ticker-item" data-news-id="1">Gold Futures (GC=F) hit new 2026 high at $4,657...</div>
+                                        <div class="ticker-item" data-news-id="2">Institutional demand for GC=F increases by 15%...</div>
+                                        <div class="ticker-item" data-news-id="3">Analysts eye $4,800 as next major resistance...</div>
+                                        <div class="ticker-item" data-news-id="4">Federal Reserve interest rate signals boost Gold sentiment...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="news-modal" class="modal hidden">
+                            <div class="modal-content">
+                                <span id="close-modal" class="close-btn">&times;</span>
+                                <div id="modal-news-body"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="trading-panel">
+                        <div class="trade-card">
+                            <h2>Buy Gold Futures (GC=F)</h2>
+                            <div class="form-group">
+                                <label for="buy-amount">Amount (oz)</label>
+                                <input type="number" id="buy-amount" placeholder="0.00" step="0.01">
+                            </div>
+                            <button class="btn buy" id="buy-order-btn" type="button">Place Buy Order</button>
+                        </div>
+
+                        <div class="trade-card">
+                            <h2>Sell Gold Futures (GC=F)</h2>
+                            <div class="form-group">
+                                <label for="sell-amount">Amount (oz)</label>
+                                <input type="number" id="sell-amount" placeholder="0.00" step="0.01">
+                            </div>
+                            <button class="btn sell" id="sell-order-btn" type="button">Place Sell Order</button>
+                        </div>
+                    </section>
+                    <div class="order-status" id="order-status"></div>
+                </div>
+
+                <aside class="dashboard-side">
+                    <section class="results-card">
+                        <div class="card-head">
+                            <div class="card-title">
+                                <span class="icon-badge">P</span>
+                                <h2>Portfolio Snapshot</h2>
+                            </div>
+                            <a class="link-btn" href="portfolio.html">Open</a>
+                        </div>
+                        <div class="helper-text">Your simulated cash/holdings from Home Buy/Sell and Portfolio actions.</div>
+                        <div id="home-portfolio-preview"></div>
+                    </section>
+
+                    <section class="results-card">
+                        <div class="card-head">
+                            <div class="card-title">
+                                <span class="icon-badge">N</span>
+                                <h2>Live Headlines</h2>
+                            </div>
+                            <a class="link-btn" href="market.html">Open</a>
+                        </div>
+                        <div class="helper-text" id="home-market-status">Loading live headlines...</div>
+                        <div class="news-list" id="home-market-news"></div>
+                    </section>
+
+                    <section class="results-card">
+                        <div class="card-head">
+                            <div class="card-title">
+                                <span class="icon-badge">B</span>
+                                <h2>Strategy Tester</h2>
+                            </div>
+                            <a class="link-btn" href="backtest.html">Open</a>
+                        </div>
+                        <div class="helper-text">Backtest summary from your most recent run.</div>
+                        <div id="home-backtest-preview"></div>
+                    </section>
+
+                    <section class="results-card">
+                        <div class="card-head">
+                            <div class="card-title">
+                                <span class="icon-badge">Q</span>
+                                <h2>Quick Access</h2>
+                            </div>
+                            <a class="link-btn" href="wishlist.html">Wishlist</a>
+                        </div>
+                        <div class="param-grid">
+                            <div class="result-item"><span class="label">Wishlist</span><span class="value" id="home-wishlist-count">0</span></div>
+                            <div class="result-item"><span class="label">Presets</span><span class="value" id="home-presets-count">0</span></div>
+                            <div class="result-item"><span class="label">Logged In</span><span class="value" id="home-auth-status">No</span></div>
+                        </div>
+                    </section>
+
+                    <section class="results-card">
+                        <div class="card-head">
+                            <div class="card-title">
+                                <span class="icon-badge">U</span>
+                                <h2>Your Profile</h2>
+                            </div>
+                            <a class="link-btn" href="profile.html">Open</a>
+                        </div>
+                        <div class="helper-text" id="home-profile-preview"></div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+
+        <section class="market-insights">
+            <h2>Market Insights</h2>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h3>Global Trends</h3>
+                    <p>Gold Futures (GC=F) prices remain steady amid global market shifts. <a href="market.html">Read more...</a></p>
+                </div>
+                <div class="insight-card">
+                    <h3>Investment Tips</h3>
+                    <p>Diversify your portfolio with Gold Futures (GC=F) for long-term stability. <a href="market.html">See all tips...</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-card">
+            <h2>Community</h2>
+            <div class="helper-text">Latest ideas from traders. Open Ideas page to post and discuss.</div>
+            <div class="ideas-grid" id="home-ideas-preview"></div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

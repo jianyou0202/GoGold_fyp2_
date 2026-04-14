@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldTrade - Market Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GoGold</div>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backtest.html">Strategy Tester</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="market.html" class="active">Market Insights</a></li>
+                <li><a href="ideas.html">Idea</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li id="nav-auth-area"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Market Insights</h1>
+            <p>Stay updated with the latest Gold Futures (GC=F) market trends and investment tips.</p>
+        </section>
+
+        <section class="market-insights-page">
+            <div class="insight-grid">
+                <div class="insight-card highlight">
+                    <h3>Global Gold Futures Demand</h3>
+                    <p>Demand for Gold Futures (GC=F) remains strong in institutional markets, providing a solid floor for prices despite interest rate fluctuations.</p>
+                </div>
+                <div class="insight-card highlight">
+                    <h3>Inflation Hedge</h3>
+                    <p>Gold Futures continue to serve as a primary hedge against global inflation, outperforming many traditional assets during periods of currency devaluation.</p>
+                </div>
+                <div class="insight-card highlight">
+                    <h3>Institutional Holdings</h3>
+                    <p>Major institutions worldwide have increased their Gold Futures (GC=F) positions by 15% this year, signaling long-term confidence in the metal's value.</p>
+                </div>
+                <div class="insight-card highlight">
+                    <h3>Technical Analysis</h3>
+                    <p>Current technical indicators suggest a consolidation phase before the next potential breakout for Gold Futures (GC=F). Watch the $4,500 support level closely.</p>
+                </div>
+            </div>
+
+            <div class="market-news">
+                <h2>Latest GC=F News</h2>
+                <div class="helper-text" id="market-news-status">Loading live headlines...</div>
+                <div class="news-list" id="market-live-news"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="market-news-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-market-news-modal" class="close-btn">&times;</span>
+            <div id="market-news-modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GoldTrade. All rights reserved.</p>
+    </footer>
+</body>
+</html>
